@@ -12,6 +12,6 @@ class Pgmagick < Formula
 
   def install
     install_path = "#{prefix}/lib/python2.7/site-packages"
-    system 'python', 'setup.py', 'install', "--install-dir=#{install_path}"
+    system 'python', 'setup.py', 'install', "--prefix=#{prefix}"
   end
 end
