@@ -11,7 +11,7 @@ class Pgmagick < Formula
   depends_on 'graphicsmagick' => 'with-magick-plus-plus'
 
   def install
-    install_path = "#{prefix}/lib/python2.7/site-packages"
-    system 'python', 'setup.py', 'install', "--prefix=#{prefix}"
+    install_path = `brew --prefix`
+    system 'python', 'setup.py', 'install', "--prefix=#{install_path}"
   end
 end
