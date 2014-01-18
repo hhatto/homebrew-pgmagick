@@ -7,11 +7,11 @@ class Pgmagick < Formula
   sha1 '62d00f1d66a6a357327cdd71000fa2d1e93629f7'
 
   depends_on 'python'
-  depends_on 'pip'
   depends_on 'boost' => [:optional, 'with-thread-unsafe', 'build-from-source']
   depends_on 'graphicsmagick' => 'with-magick-plus-plus'
 
   def install
-    system 'pip', 'install', "."
+    install_path = "#{prefix}/lib/python2.7/site-packages"
+    system 'python', 'setup.py', 'install', "--install-dir=#{install_path}"
   end
 end
