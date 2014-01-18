@@ -10,6 +10,6 @@ class Pgmagick < Formula
   depends_on 'graphicsmagick' => 'with-magick-plus-plus'
 
   def install
-    system 'pip', 'install', '--upgrade', 'pgmagick'
+    system 'python', 'setup.py', 'install'
   end
 end
