@@ -7,6 +7,7 @@ class Pgmagick < Formula
 
   depends_on 'python'
   depends_on 'boost' => [:optional, 'with-thread-unsafe', 'build-from-source']
+  depends_on 'boost-python'
   depends_on 'graphicsmagick' => 'with-magick-plus-plus'
 
   def install
