@@ -2,8 +2,8 @@ require 'formula'
 
 class Pgmagick < Formula
   homepage 'https://pypi.python.org/pypi/pgmagick/'
-  url 'https://bitbucket.org/hhatto/pgmagick/get/ver0.5.8.tar.bz2'
-  sha1 'cbb9d00fb1620659f7e99ea2f94282de71470f26'
+  url 'https://bitbucket.org/hhatto/pgmagick/get/ver0.5.9.tar.bz2'
+  sha1 '2cc98a20dcd13ee98b3209b656a949f971682ec9'
 
   depends_on 'python'
   depends_on 'boost' => [:optional, 'with-thread-unsafe', 'build-from-source', '--with-python']
