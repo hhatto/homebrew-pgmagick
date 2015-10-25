@@ -6,7 +6,7 @@ class Pgmagick < Formula
   sha1 'ba75b74eb17e8756c2ff2406e743e7400c1d6ab7'
 
   depends_on 'python'
-  depends_on 'boost' => [:optional, 'with-thread-unsafe', 'build-from-source']
+  depends_on 'boost' => ['with-thread-unsafe', 'build-from-source']
   depends_on 'boost-python'
   depends_on 'graphicsmagick' => 'with-magick-plus-plus'
 
