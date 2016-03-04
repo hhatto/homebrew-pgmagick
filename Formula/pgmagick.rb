@@ -22,7 +22,7 @@ class Pgmagick < Formula
   # end
 
   def install
-    install_dir = "/usr/local"
-    system 'python', 'setup.py', 'install', "--prefix=#{install_dir}"
+    ENV.prepend_create_path "PYTHONPATH", "#{lib}/python2.7/site-packages"
+    system 'python', 'setup.py', 'install', "--prefix=#{prefix}"
   end
 end
