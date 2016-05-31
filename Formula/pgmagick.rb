@@ -2,8 +2,8 @@ require 'formula'
 
 class Pgmagick < Formula
   homepage 'https://pypi.python.org/pypi/pgmagick/'
-  url 'https://github.com/hhatto/pgmagick/archive/ver0.6.1.tar.gz'
-  sha1 '9bdf3116b81568fe0effd386ffbd75214b83f66f'
+  url 'https://github.com/hhatto/pgmagick/archive/ver0.6.2.tar.gz'
+  sha1 '381d27893d9ba0dec72580e6111b83044270b59b'
 
   ## not support yet
   # option "with-imagemagick", "Build with ImageMagick"
