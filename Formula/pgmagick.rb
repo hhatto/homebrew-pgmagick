@@ -25,7 +25,7 @@ class Pgmagick < Formula
   # end
 
   def install
-    if build.python3?
+    if build.with? "python3"
       ENV.prepend_create_path "PYTHONPATH", "#{lib}/python3.6/site-packages"
       system 'python3', 'setup.py', 'install', "--prefix=#{prefix}"
     else
