@@ -5,20 +5,16 @@ class Pgmagick < Formula
   url 'https://github.com/hhatto/pgmagick/archive/ver0.6.5.tar.gz'
   sha256 '33c19044c24c100d3d0df2e9d8d2254955e9869e23740e004800655c1826839d'
 
-  option :python3
+  option "with-python3", "support python3"
+  depends_on "python3" => :optional
 
   ## not support yet
   # option "with-imagemagick", "Build with ImageMagick"
 
-  depends_on 'boost' => ['with-thread-unsafe', 'build-from-source']
-  if build.python3?
-    depends_on 'python3'
-    depends_on 'boost-python' => 'python3'
-  else
-    depends_on :python if MacOS.version <= :snow_leopard
-    depends_on 'boost-python'
-  end
+  depends_on :python if MacOS.version <= :snow_leopard
   depends_on 'graphicsmagick'
+  depends_on 'boost' => ['with-thread-unsafe', 'build-from-source']
+  depends_on 'boost-python' => [:optional, 'with-python3']
 
   ## not support yet
   # if build.with? "imagemagick"
