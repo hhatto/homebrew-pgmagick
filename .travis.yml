@@ -20,7 +20,7 @@ install:
 
 script:
     # - brew audit --strict ./Formula/*.rb
-    - if [ "$PEP8_VERSION" == "python3" ]; then
+    - if [ "$PYTHON_VERSION" == "python3" ]; then
         brew install --verbose --build-bottle ./Formula/*.rb --with-python3;
       else
         brew install --verbose --build-bottle ./Formula/*.rb;
