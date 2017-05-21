@@ -1,4 +1,4 @@
-## About
+## About [![Build Status](https://travis-ci.org/hhatto/homebrew-pgmagick.svg?branch=master)](https://travis-ci.org/hhatto/homebrew-pgmagick)
 homebrew for [pgmagick](https://pypi.python.org/pypi/pgmagick/)
 
 ## usage
@@ -7,6 +7,11 @@ homebrew for [pgmagick](https://pypi.python.org/pypi/pgmagick/)
 ```
 $ brew tap hhatto/pgmagick
 $ brew install pgmagick
+```
+
+Python3
+```
+$ brew install pgmagick --with-python3
 ```
 
 ### uninstall
