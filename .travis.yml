@@ -1,12 +1,23 @@
 language: ruby
+
+env:
+    PYTHON_VERSION=python
+    PYTHON_VERSION=python3
+
 matrix:
     include:
         - os: osx
           osx_image: xcode8
         - os: osx
           osx_image: xcode7.3
+
 install:
     - brew update
+
 script:
-    - brew audit --strict ./Formula/*.rb
-    - brew install --verbose --build-bottle ./Formula/*.rb
+    # - brew audit --strict ./Formula/*.rb
+    - if [ "$PEP8_VERSION" == "python3" ]; then
+        brew install --verbose --build-bottle ./Formula/*.rb --with-python3;
+      else
+        brew install --verbose --build-bottle ./Formula/*.rb;
+      fi
