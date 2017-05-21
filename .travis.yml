@@ -1,8 +1,8 @@
 language: ruby
 
 env:
-    PYTHON_VERSION=python
-    PYTHON_VERSION=python3
+    - PYTHON_VERSION=python
+    - PYTHON_VERSION=python3
 
 matrix:
     include:
