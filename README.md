@@ -9,9 +9,14 @@ $ brew tap hhatto/pgmagick
 $ brew install pgmagick
 ```
 
-Python3
+with Python3
 ```
-$ brew install pgmagick --with-python3
+$ brew install pgmagick
+```
+
+with Python2
+```
+$ brew install pgmagick --with-python@2
 ```
 
 ### uninstall
