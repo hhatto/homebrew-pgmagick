@@ -4,19 +4,16 @@ class Pgmagick < Formula
   url "https://github.com/hhatto/pgmagick/archive/ver0.7.4.tar.gz"
   sha256 "a3cb2d5fec6bd8aa63fb0fcfd819ae97c602582df94ff62b0bca0360a75758f2"
 
-  option "with-python2", "use python2"
+  option "with-python@2", "use python2"
 
   ## not support yet
   # option "with-imagemagick", "Build with ImageMagick"
 
-  if build.with? "python2"
-    depends_on :python => "2" if MacOS.version <= :snow_leopard
-  else
-    depends_on :python if MacOS.version <= :snow_leopard
-  end
+  depends_on "python" => :recommended
+  depends_on "python@2" => :optional
 
   depends_on "graphicsmagick"
-  if build.with? "python2"
+  if build.with? "python@2"
     depends_on "boost-python"
   else
     depends_on "boost-python3"
@@ -31,7 +28,7 @@ class Pgmagick < Formula
   # end
 
   def install
-    if build.with? "python2"
+    if build.with? "python@2"
       ENV.prepend_create_path "PYTHONPATH", "#{lib}/python2.7/site-packages"
       system "python", "setup.py", "install", "--prefix=#{prefix}"
     else
