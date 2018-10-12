@@ -12,10 +12,10 @@ class Pgmagick < Formula
 
   depends_on :python if MacOS.version <= :snow_leopard
   depends_on "graphicsmagick"
-  if build.with? "python"
-    depends_on "boost-python3"
-  else
+  if build.with? "python@2"
     depends_on "boost-python"
+  else
+    depends_on "boost-python3"
   end
 
   ## not support yet
@@ -27,11 +27,12 @@ class Pgmagick < Formula
   # end
 
   def install
-    if build.with? "python"
-      ENV.prepend_create_path "PYTHONPATH", "#{lib}/python3.7/site-packages"
-    else
+    if build.with? "python@2"
       ENV.prepend_create_path "PYTHONPATH", "#{lib}/python2.7/site-packages"
+      system "python", "setup.py", "install", "--prefix=#{prefix}"
+    else
+      ENV.prepend_create_path "PYTHONPATH", "#{lib}/python3.7/site-packages"
+      system "python3", "setup.py", "install", "--prefix=#{prefix}"
     end
-    system "python", "setup.py", "install", "--prefix=#{prefix}"
   end
 end
